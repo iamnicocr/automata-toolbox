@@ -1,16 +1,21 @@
-# regex | cadena | esperado
-# Casos del documento
+### FORMATO DE PRUEBAS #######
+# regex a ingresar | cadena a probar | resultado esperado
+######################
+# Casos del document - Capturas de evidencia adjuntos en "Evidencia"
+###### BLOQUE 1 #######
  a*|EPS|ACCEPT
  a*|eps|ACCEPT
  a*|a|ACCEPT
  a*|aaaa|ACCEPT
  a*|b|REJECT
  a*|ab|REJECT
+###### BLOQUE 2 #######
  (a|b)*abb|abb|ACCEPT
  (a|b)*abb|aabb|ACCEPT
  (a|b)*abb|babb|ACCEPT
  (a|b)*abb|ab|REJECT
  (a|b)*abb|abba|REJECT
+##### BLOQUE 3 #######
  (a|b)*b|ab|ACCEPT
  (a|b)*b|aab|ACCEPT
  (a|b)*b|b|ACCEPT
@@ -18,20 +23,26 @@
  (a|b)*b|a|REJECT
  (a|b)*b|EPS|REJECT
  (a|b)*b|eps|REJECT
-# Casos extra
+###### BLOQUE 4 #######
  a|a|ACCEPT
  a|b|REJECT
+## SUB1
  ϵ|EPS|ACCEPT
  ϵ|eps|ACCEPT
  ϵ|a|REJECT
+## SUB2
  (a|ϵ)b|b|ACCEPT
  (a|ϵ)b|ab|ACCEPT
  (a|ϵ)b|a|REJECT
+## SUB3
  (a|eps)b|b|ACCEPT
  (a|EPS)b|ab|ACCEPT
+## SUB4
  ((a|b)*)*|EPS|ACCEPT
  ((a|b)*)*|abba|ACCEPT
+## SUB5
  (a|b)*(ab|ba)|abba|ACCEPT
  (a|b)*(ab|ba)|aaaa|REJECT
+## SUB6
  (a|b)*a(a|b)*|babb|ACCEPT
  (a|b)*a(a|b)*|bbbb|REJECT
