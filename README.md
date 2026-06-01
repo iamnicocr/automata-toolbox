@@ -8,7 +8,7 @@ Realizado por Nicolas Carrillo R.
 - `main.py`: menú principal. (a ejecutar)
 - `funciones.py`: parser, Thompson, subset construction y simulación.
 - `pruebas.txt`: documento con casos de prueba.
-- `informe.docx`: informe de un caso y su prueba
+- `informeCA1.pdf`: informe del caso con su prueba
 
 ## Cómo correr
 En la carpeta del proyecto, click derecho -> Powershell/Open in terminal. 
