@@ -1,0 +1,37 @@
+# regex | cadena | esperado
+# Casos del documento
+ a*|EPS|ACCEPT
+ a*|eps|ACCEPT
+ a*|a|ACCEPT
+ a*|aaaa|ACCEPT
+ a*|b|REJECT
+ a*|ab|REJECT
+ (a|b)*abb|abb|ACCEPT
+ (a|b)*abb|aabb|ACCEPT
+ (a|b)*abb|babb|ACCEPT
+ (a|b)*abb|ab|REJECT
+ (a|b)*abb|abba|REJECT
+ (a|b)*b|ab|ACCEPT
+ (a|b)*b|aab|ACCEPT
+ (a|b)*b|b|ACCEPT
+ (a|b)*b|ba|REJECT
+ (a|b)*b|a|REJECT
+ (a|b)*b|EPS|REJECT
+ (a|b)*b|eps|REJECT
+# Casos extra
+ a|a|ACCEPT
+ a|b|REJECT
+ ϵ|EPS|ACCEPT
+ ϵ|eps|ACCEPT
+ ϵ|a|REJECT
+ (a|ϵ)b|b|ACCEPT
+ (a|ϵ)b|ab|ACCEPT
+ (a|ϵ)b|a|REJECT
+ (a|eps)b|b|ACCEPT
+ (a|EPS)b|ab|ACCEPT
+ ((a|b)*)*|EPS|ACCEPT
+ ((a|b)*)*|abba|ACCEPT
+ (a|b)*(ab|ba)|abba|ACCEPT
+ (a|b)*(ab|ba)|aaaa|REJECT
+ (a|b)*a(a|b)*|babb|ACCEPT
+ (a|b)*a(a|b)*|bbbb|REJECT
